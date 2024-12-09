@@ -22,11 +22,14 @@ app = FastAPI()
 class QueryRequest(BaseModel):
     query: str
 
-# Inicializar LangChain (Pré-carregamento do PDF e configuração)
-pdf_path = "C:\\Users\\eduar\\OneDrive\\Documentos\\Langchain\\src\\edital_ifsp_itapetininga.pdf"  # Substitua pelo caminho do PDF
+
+# Carregando arquivo
+base_dir = os.path.dirname(os.path.abspath(__file__))  # Diretório do arquivo atual
+pdf_path = os.path.join(base_dir, "src", "edital_ifsp_itapetininga.pdf")
 loader = PyPDFLoader(pdf_path)
 documents = loader.load()
 
+# Inicializar LangChain
 text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
 docs = text_splitter.split_documents(documents)
 
