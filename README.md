@@ -43,7 +43,7 @@ O Chatbot IA é um sistema construído em VueJS, Python e Redis. Permite que os 
 A linguagem ecolhida foi TypeScript juntamente com Python e o banco de dados não relacional Redis. Entre as bibliotecas utilizadas, as principais são:
 
 - [LangChain](https://www.langchain.com/langchain)
-- [redis](https://redis.io/docs/latest/develop/clients/redis-py/)
+- [Redis](https://redis.io/docs/latest/develop/clients/redis-py/)
 - [FastAPI](https://fastapi.tiangolo.com/)
 
 ![Diagrama da Stack](https://raw.githubusercontent.com/Almeedus/Chatbot-IA/refs/heads/main/src/diagrama-stack.png)
