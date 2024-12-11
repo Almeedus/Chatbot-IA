@@ -2,7 +2,7 @@
 
 <center>
 
-![Logo AssistIF](https://raw.githubusercontent.com/Almeedus/Chatbot-IA/refs/heads/main/src/Logo.png)
+![Logo ChatbotIA](https://raw.githubusercontent.com/Almeedus/Chatbot-IA/refs/heads/main/src/Logo.png)
 
 </center>
 
@@ -12,7 +12,7 @@
 <hr>
 
 ## 🌐 Visão Geral
-O AssistIF é um sistema construído em VueJS, Python e MongoDB. Permite que os usuários utilizem o sistema por meio de requesições contendo dúvidas baseadas nos editais de vestibular do Instituto Federal de São Paulo.
+O Chatbot IA é um sistema construído em VueJS, Python e Redis. Permite que os usuários utilizem o sistema por meio de requesições contendo dúvidas baseadas nos editais de vestibular do Instituto Federal de São Paulo.
 
 <hr>
 
@@ -31,19 +31,19 @@ O AssistIF é um sistema construído em VueJS, Python e MongoDB. Permite que os 
 ## 💻 Pré-Requisitos
 - Python instalado;
 - Conhecimentos de Python e API RESTful;
-- MongoDB instalado;
-- Conhecimentos em MongoDB.
+- Redis instalado;
+- Conhecimentos em Redis.
 
 [`📗 Guia de Instação Python`](https://www.python.org/downloads/)
-[`📙 Guia de Instação MongoDB`](https://www.mongodb.com/pt-br/docs/manual/installation/)
+[`📙 Guia de Instação Redis`](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/)
 
 <hr>
 
 ## 🛠️ Stack Utilizada
-A linguagem ecolhida foi TypeScript juntamente com Python e o banco de dados não relacional MongoDB. Entre as bibliotecas utilizadas, as principais são:
+A linguagem ecolhida foi TypeScript juntamente com Python e o banco de dados não relacional Redis. Entre as bibliotecas utilizadas, as principais são:
 
 - [LangChain](https://www.langchain.com/langchain)
-- [PyMongo](https://mongoosejs.com/)
+- [redis](https://redis.io/docs/latest/develop/clients/redis-py/)
 - [FastAPI](https://fastapi.tiangolo.com/)
 
 ![Diagrama da Stack](https://raw.githubusercontent.com/Almeedus/Chatbot-IA/refs/heads/main/src/diagrama-stack.png)
@@ -52,7 +52,7 @@ A linguagem ecolhida foi TypeScript juntamente com Python e o banco de dados nã
 <hr>
 
 ## 🚩 Iniciando a Aplicação
-Antes de tudo você deve ter o MongoDB e o Python instalados conforme os [pré-requisitos](#-pré-requisitos).
+Antes de tudo você deve ter o Redis e o Python instalados conforme os [pré-requisitos](#-pré-requisitos).
 
 > [!NOTE]
 > Sem a instalação dessas tecnologias a aplicação não irá rodar.
@@ -66,10 +66,10 @@ git clone https://github.com/Almeedus/Chatbot-IA.git
 É importante criar um arquivos com variáveis a serem utilizadas pela aplicação, como porta onde a API irá rodar e o nome do DataBase e a chave da API que irá acessar, dessa forma crie um arquivo `.env` e insira as seguintes informações:
 ```bash
 OPENAI_API_KEY = "INFORME SUA CHAVE DE API" 
-MONGODB_NOME = "minhabasededados"
-MONGODB_PORTA = 8080
+REDIS_HOST = "localhost"
+REDIS_PORT = 6379
 ```
-Substitua o `"minhabasebasededados"` pelo seu banco de dados criado no MongoDB e `8080` pela porta que deseja rodar a aplicação.
+Substitua o `"localhost"` pelo seu banco de dados criado no Redis e `6379` pela porta que deseja rodar a aplicação.
 
 ### 🏁 Rodando a Aplicação
 
@@ -79,11 +79,11 @@ pip install -r requirements.txt
 ```
 Use o comando `uvicorn main:app` para iniciar a aplicação na porta indicada no [.env](#️-cofigurando-o-env)
 ```bash
-uvicorn main:app
+uvicorn router:app
 ```
 Use o comando `uvicorn main:app --reload` para iniciar a aplicação em modo desenvolvimento na porta indicada no [.env](#️-cofigurando-o-env)
 ```bash
-uvicorn main:app --reload
+uvicorn router:app --reload
 ```
 <hr>
 
@@ -101,12 +101,14 @@ uvicorn main:app --reload
 ## 📁 Estrutura das Pastas
 
 ```
-requirements.txt      # Bibliotecas necessárias para o funcionamento
-main.py               # Início da aplicação
-database.py           # Configurações de conexão do banco de dados
-.env                  # Arquivo das variáveis de ambiente
-src
-└───edital            # Edital para consulta
+project/
+│
+├── config.py         # Configurações de ambiente e Redis
+├── model.py          # Configurações do LangChain
+├── router.py         # Rotas da API com FastAPI
+├── src/
+│   └── edital_ifsp_itapetininga.pdf
+└── .env              # Variáveis de ambiente
 ```
 <hr>
 
@@ -117,11 +119,10 @@ src
 - [x] Rota de pesquisa;
 - [x] Ler editais;
 - [ ] Utilizar modelo gpt4-o treinado;
-- [ ] Consultar editais relacionados a um usuário.
 
 #### 👤 Consultas
-- [ ] Salvar resultados pesquisa;
+- [x] Salvar resultados pesquisa;
 - [ ] Consultar as 5 pesquisas mais feitas.
 
 <hr>
-🫂 Obrigado por usar o AssistIF!
+🫂 Obrigado por usar o Chatbot IA!
