@@ -17,15 +17,21 @@ O Chatbot IA é um sistema construído em VueJS, Python e Redis. Permite que os 
 <hr>
 
 ## 🗃️ Índice
-- [`💻 Pré-Requisitos`](#-pré-requisitos)
-- [`🛠️ Stack Utilizada`](#%f0%9f%9b%a0-stack-utilizada)
-- [`🚩 Iniciando a Aplicação`](#-iniciando-a-aplicação)
-    - [`⬇️ Clonando o Repositório`](#️-clonando-o-repositório)
-    - [`⚙️ Configurando o .env`](#️-cofigurando-o-env)
-    - [`🏁 Rodando a Aplicação`](#-rodando-a-aplicação)
-- [`⚓ EndPoints`](#-endpoints)
-- [`📁 Estrutura das Pastas`](#-estrutura-das-pastas)
-- [`📈 Progresso do Desenvolvimento`](#-progresso-do-desenvolvimento)
+- [Chatbot-IA](#chatbot-ia)
+  - [🌐 Visão Geral](#-visão-geral)
+  - [🗃️ Índice](#️-índice)
+  - [💻 Pré-Requisitos](#-pré-requisitos)
+  - [🛠️ Stack Utilizada](#️-stack-utilizada)
+  - [🚩 Iniciando a Aplicação](#-iniciando-a-aplicação)
+    - [⬇️ Clonando o Repositório](#️-clonando-o-repositório)
+    - [⚙️ Cofigurando o .env](#️-cofigurando-o-env)
+    - [🏁 Rodando a Aplicação](#-rodando-a-aplicação)
+  - [⚓ Endpoints](#-endpoints)
+    - [📒 Editais](#-editais)
+  - [📁 Estrutura das Pastas](#-estrutura-das-pastas)
+  - [📈 Progresso do Desenvolvimento](#-progresso-do-desenvolvimento)
+      - [📒 Editais](#-editais-1)
+      - [👤 Consultas](#-consultas)
 <hr>
 
 ## 💻 Pré-Requisitos
@@ -46,7 +52,11 @@ A linguagem ecolhida foi TypeScript juntamente com Python e o banco de dados nã
 - [Redis](https://redis.io/docs/latest/develop/clients/redis-py/)
 - [FastAPI](https://fastapi.tiangolo.com/)
 
-![Diagrama da Stack](https://raw.githubusercontent.com/Almeedus/Chatbot-IA/refs/heads/main/src/diagrama-stack.png)
+A construção no sistema opercional Windows e Linux tem a arquitetura diferente, uma vez que ao utilizar o sistema no windows é necessário a utilização do WSL (Subsistema Windows para Linux) por conta que o Redis é um banco exclusivo do Linux.
+
+![Diagrama da Stack](https://raw.githubusercontent.com/Almeedus/Chatbot-IA/refs/heads/main/src/diagrama-stack-windows.png)
+
+![Diagrama da Stack](https://raw.githubusercontent.com/Almeedus/Chatbot-IA/refs/heads/main/src/diagrama-stack-linux.png)
 > Imagem feita utilizando o [Excalidraw](https://excalidraw.com/)
 
 <hr>
