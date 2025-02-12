@@ -22,6 +22,8 @@ O Chatbot IA é um sistema construído em VueJS, Python e Redis. Permite que os 
   - [🗃️ Índice](#️-índice)
   - [💻 Pré-Requisitos](#-pré-requisitos)
   - [🛠️ Stack Utilizada](#️-stack-utilizada)
+    - [Stack de Instalação do Windows](#stack-de-instalação-do-windows)
+    - [Stack de Instalação do Linux](#stack-de-instalação-do-linux)
   - [🚩 Iniciando a Aplicação](#-iniciando-a-aplicação)
     - [⬇️ Clonando o Repositório](#️-clonando-o-repositório)
     - [⚙️ Cofigurando o .env](#️-cofigurando-o-env)
@@ -54,8 +56,10 @@ A linguagem ecolhida foi TypeScript juntamente com Python e o banco de dados nã
 
 A construção no sistema opercional Windows e Linux tem a arquitetura diferente, uma vez que ao utilizar o sistema no windows é necessário a utilização do WSL (Subsistema Windows para Linux) por conta que o Redis é um banco exclusivo do Linux.
 
+### Stack de Instalação do Windows
 ![Diagrama da Stack](https://raw.githubusercontent.com/Almeedus/Chatbot-IA/refs/heads/main/src/diagrama-stack-windows.png)
 
+### Stack de Instalação do Linux
 ![Diagrama da Stack](https://raw.githubusercontent.com/Almeedus/Chatbot-IA/refs/heads/main/src/diagrama-stack-linux.png)
 > Imagem feita utilizando o [Excalidraw](https://excalidraw.com/)
 
