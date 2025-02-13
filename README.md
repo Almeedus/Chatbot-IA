@@ -61,7 +61,7 @@ A construção no sistema opercional Windows e Linux tem a arquitetura diferente
 
 ### Stack de Instalação do Linux
 ![Diagrama da Stack](https://raw.githubusercontent.com/Almeedus/Chatbot-IA/refs/heads/main/src/diagrama-stack-linux.png)
-> Imagem feita utilizando o [Excalidraw](https://excalidraw.com/)
+> Imagem feita utilizando o [Canva](https://www.canva.com/)
 
 <hr>
 
