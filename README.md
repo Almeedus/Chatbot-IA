@@ -135,11 +135,11 @@ project/
 - [x] Inserir edital do processo seletivo;
 - [x] Rota de pesquisa;
 - [x] Ler editais;
-- [ ] Utilizar modelo gpt4-o treinado;
+- [x] Utilizar modelo gpt4-o treinado;
 
 #### 👤 Consultas
 - [x] Salvar resultados pesquisa;
-- [ ] Consultar as 5 pesquisas mais feitas.
+- [ ] Consultar as 5 pesquisas recentes.
 
 <hr>
 🫂 Obrigado por usar o Chatbot IA!
