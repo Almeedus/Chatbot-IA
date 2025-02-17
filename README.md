@@ -37,10 +37,13 @@ O Chatbot IA é um sistema construído em VueJS, Python e Redis. Permite que os 
 <hr>
 
 ## 💻 Pré-Requisitos
-- Python instalado;
+- Python 3.12.3 instalado;
+- Microsoft Visual Studio Build Tools: Desktop development with C++ instalado;
 - Conhecimentos de Python e API RESTful;
 - Redis instalado;
 - Conhecimentos em Redis.
+
+OBS.: Caso o sistema operacional usado seja o Windows é necessário instalar e ativar o WSL para a instação do Redis
 
 [`📗 Guia de Instação Python`](https://www.python.org/downloads/)
 [`📙 Guia de Instação Redis`](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/)
