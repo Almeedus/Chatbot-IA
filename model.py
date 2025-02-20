@@ -23,6 +23,6 @@ embeddings = OpenAIEmbeddings()
 vectorstore = FAISS.from_documents(docs, embeddings)
 
 qa_chain = RetrievalQA.from_chain_type(
-    llm=ChatOpenAI(model="ft:gpt-4o-2024-08-06:personal:fine-tuning2:AoGMkhl2"),
+    llm=ChatOpenAI(model="ft:gpt-4o-2024-08-06:personal:fine-tuning:B1zlL1M4"),
     retriever=vectorstore.as_retriever()
 )
