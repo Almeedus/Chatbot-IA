@@ -18,9 +18,12 @@ app.add_middleware(
     allow_headers=["*"], 
 )
 
-
 class QueryRequest(BaseModel):
     query: str
+    
+@app.get("/")
+async def root():
+    return {"message": "API Funcionando!"}
 
 @app.post("/duvidas")
 async def answer_query(request: QueryRequest):
@@ -50,10 +53,6 @@ async def answer_query(request: QueryRequest):
     except Exception as e:
         print("Erro no Backend:", str(e)) 
         raise HTTPException(status_code=500, detail=str(e))
-
-@app.get("/")
-async def root():
-    return {"message": "API Funcionando!"}
 
 @app.get("/download")
 async def download():
