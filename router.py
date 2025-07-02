@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from config import redis_db
-from model import qa_chain
+from model import load_qa_chain_for_section
 import json
 import os
 
@@ -29,6 +29,7 @@ async def root():
 @app.post("/duvidas")
 async def answer_query(request: QueryRequest):
     try:
+        qa_chain = load_qa_chain_for_section(request.section or "")
         response = qa_chain.invoke(request.query)
 
         data = {
