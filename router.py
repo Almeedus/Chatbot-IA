@@ -20,6 +20,7 @@ app.add_middleware(
 
 class QueryRequest(BaseModel):
     query: str
+    section: str = None
     
 @app.get("/")
 async def root():
@@ -29,7 +30,6 @@ async def root():
 async def answer_query(request: QueryRequest):
     try:
         response = qa_chain.invoke(request.query)
-
 
         data = {
             "messages": [
@@ -45,13 +45,15 @@ async def answer_query(request: QueryRequest):
                     "role": "assistant",
                     "content": response["result"]
                 }
-            ]
+            ],
+            "section": request.section
         }
-        redis_db.rpush("queries_responses", json.dumps(data)) 
+
+        redis_db.rpush("queries_responses", json.dumps(data))
 
         return data
     except Exception as e:
-        print("Erro no Backend:", str(e)) 
+        print("Erro no Backend:", str(e))
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/download")
