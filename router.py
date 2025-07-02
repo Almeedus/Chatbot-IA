@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from config import redis_db
-from model import qa_chain
+from model import load_qa_chain_for_section
 import json
 import os
 
@@ -20,6 +20,7 @@ app.add_middleware(
 
 class QueryRequest(BaseModel):
     query: str
+    section: str = None
     
 @app.get("/")
 async def root():
@@ -28,8 +29,8 @@ async def root():
 @app.post("/duvidas")
 async def answer_query(request: QueryRequest):
     try:
+        qa_chain = load_qa_chain_for_section(request.section or "")
         response = qa_chain.invoke(request.query)
-
 
         data = {
             "messages": [
@@ -45,13 +46,15 @@ async def answer_query(request: QueryRequest):
                     "role": "assistant",
                     "content": response["result"]
                 }
-            ]
+            ],
+            "section": request.section
         }
-        redis_db.rpush("queries_responses", json.dumps(data)) 
+
+        redis_db.rpush("queries_responses", json.dumps(data))
 
         return data
     except Exception as e:
-        print("Erro no Backend:", str(e)) 
+        print("Erro no Backend:", str(e))
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/download")
